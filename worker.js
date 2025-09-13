@@ -558,6 +558,47 @@ async function fetchWithTimeout(url, timeoutMs, signal, extraHeaders) {
   }
 }
 
+// --- Encoding detection and decoding helpers ---
+function detectEncodingFromHeaders(headers) {
+  const contentType = headers.get && headers.get('content-type');
+  if (contentType) {
+    const match = contentType.match(/charset=([\w-]+)/i);
+    if (match) return match[1].toLowerCase();
+  }
+  return null;
+}
+
+function detectEncodingFromXmlDeclaration(buffer) {
+  // Try to decode first 256 bytes as UTF-8 to look for encoding in XML declaration
+  try {
+    const utf8 = new TextDecoder('utf-8').decode(buffer.slice(0, 256));
+    const match = utf8.match(/<\?xml[^>]*encoding=["']([\w-]+)["']/i);
+    if (match) return match[1].toLowerCase();
+  } catch {}
+  return null;
+}
+
+async function decodeFeedResponse(response) {
+  // Try to detect encoding from headers or XML declaration, then decode
+  const buffer = await response.arrayBuffer();
+  let encoding = detectEncodingFromHeaders(response.headers) || detectEncodingFromXmlDeclaration(buffer) || 'utf-8';
+  let text = '';
+  try {
+    text = new TextDecoder(encoding).decode(buffer);
+  } catch (e) {
+    // Fallbacks for common encodings
+    const fallbacks = ['utf-8', 'iso-8859-1', 'windows-1252'];
+    for (const enc of fallbacks) {
+      try {
+        text = new TextDecoder(enc).decode(buffer);
+        if (text && /[\u00C0-\u017F]/.test(text)) break; // Looks like Latin-1/accents
+      } catch {}
+    }
+    if (!text) text = new TextDecoder('utf-8', { fatal: false }).decode(buffer);
+  }
+  return text;
+}
+
 function isProbablyXml(text) {
   if (!text || typeof text !== 'string') return false;
   const trimmed = text.trim();
@@ -819,16 +860,12 @@ async function fetchWithRetry(url, timeoutMs, signal, source) {
   
   for (const proxy of rankedProxies) {
     if (signal.aborted) throw new DOMException('Aborted', 'AbortError');
-    
     const targetUrl = proxy.build(url);
     console.log('[WORKER] Tentando proxy:', proxy.name + (proxy.hasWorkedBefore ? ' (previamente bem-sucedido)' : ''), '- URL:', targetUrl.substring(0, 80) + '...');
-    
     for (let attempt = 0; attempt < maxAttemptsPerProxy; attempt++) {
       if (signal.aborted) throw new DOMException('Aborted', 'AbortError');
-      
       try {
         const res = await fetchWithTimeout(targetUrl, timeoutMs, signal, proxy.headers || {});
-        
         let text = null, items = null;
         if (proxy.type === 'json') {
           const data = await res.json().catch(function() { return null; });
@@ -841,7 +878,7 @@ async function fetchWithRetry(url, timeoutMs, signal, source) {
           items = data ? parseRss2Json(data, source) : null;
           if (!items || items.length === 0) throw new Error('RSS2JSON returned no valid items');
         } else {
-          text = await res.text();
+          text = await decodeFeedResponse(res); // <--- use robust decoding here
           if (!text) throw new Error('Empty response body');
         }
 
