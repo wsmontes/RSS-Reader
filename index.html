@@ -11,8 +11,13 @@
     <h1>Leitor de RSS</h1>
     <div class="controls">
       <div class="row" style="grid-column: span 6;">
-        <label for="xmlFile">Arquivo de fontes (.xml)</label>
-        <input id="xmlFile" type="file" accept=".xml, text/xml, application/xml" />
+        <label for="xmlFile">Arquivo de fontes (.xml, .opml)</label>
+        <input id="xmlFile" type="file" accept=".xml,.opml, text/xml, application/xml, text/x-opml, application/opml+xml" />
+      </div>
+      <div class="row" style="grid-column: span 6; display: flex; gap: 8px; align-items: end;">
+        <label for="rssUrl" style="min-width: 80px;">URL do Feed RSS</label>
+        <input id="rssUrl" type="url" placeholder="https://exemplo.com/feed.xml" style="flex:1;" />
+        <button id="addRssBtn" class="btn" style="font-size: 11px; padding: 8px 10px;">Adicionar Feed</button>
       </div>
       <div class="row" style="grid-column: span 3;">
         <label for="concurrency">Concorrência</label>
@@ -23,11 +28,12 @@
         <input id="timeout" type="number" min="5" max="60" value="15" />
       </div>
       <div class="row" style="grid-column: span 12; display: flex; gap: 8px; align-items: end;">
-        <button id="fetchBtn" class="btn btn-primary" disabled>Buscar notícias</button>
-        <button id="cancelBtn" class="btn btn-danger" disabled>Cancelar</button>
-        <button id="resetProxiesBtn" class="btn" onclick="resetProxies()" style="font-size: 11px; padding: 8px 10px;">Reset Proxies</button>
-        <button id="proxyStatsBtn" class="btn" onclick="showProxyStats()" style="font-size: 11px; padding: 8px 10px;">Stats Proxy</button>
-        <div class="status" id="status"></div>
+  <button id="fetchBtn" class="btn btn-primary" disabled>Buscar notícias</button>
+  <button id="cancelBtn" class="btn btn-danger" disabled>Cancelar</button>
+  <button id="folderBtn" class="btn" style="font-size: 11px; padding: 8px 10px;">Selecionar Pasta</button>
+  <button id="resetProxiesBtn" class="btn" onclick="resetProxies()" style="font-size: 11px; padding: 8px 10px;">Reset Proxies</button>
+  <button id="proxyStatsBtn" class="btn" onclick="showProxyStats()" style="font-size: 11px; padding: 8px 10px;">Stats Proxy</button>
+  <div class="status" id="status"></div>
       </div>
     </div>
   </header>

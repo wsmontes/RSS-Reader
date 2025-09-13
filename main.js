@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // DOM elements
   const els = {
     xmlFile: document.getElementById('xmlFile'),
+    folderBtn: document.getElementById('folderBtn'),
     concurrency: document.getElementById('concurrency'),
     timeout: document.getElementById('timeout'),
     fetchBtn: document.getElementById('fetchBtn'),
@@ -17,7 +18,106 @@ document.addEventListener('DOMContentLoaded', function() {
     sourcesSummary: document.getElementById('sourcesSummary'),
     resetProxiesBtn: document.getElementById('resetProxiesBtn'),
     proxyStatsBtn: document.getElementById('proxyStatsBtn'),
+    rssUrl: document.getElementById('rssUrl'),
+    addRssBtn: document.getElementById('addRssBtn'),
   };
+  // Add RSS feed URL handler
+  async function handleAddRssUrl() {
+    const url = (els.rssUrl && els.rssUrl.value.trim()) || '';
+    if (!url) {
+      alert('Informe a URL do feed RSS.');
+      return;
+    }
+    // Optionally, validate URL format
+    try {
+      new URL(url);
+    } catch {
+      alert('URL inválida.');
+      return;
+    }
+    // Add to sources and update UI
+    const title = url;
+    const newSource = { title, category: '', url };
+    // Prevent duplicates
+    if (state.sources.some(s => s.url === url)) {
+      alert('Este feed já está na lista.');
+      return;
+    }
+    state.sources.push(newSource);
+    populateFilterOptions();
+    renderArticles();
+    els.status.innerHTML = '<span class="ok">Feed adicionado à lista. Clique em Buscar notícias para processar.</span>';
+    els.rssUrl.value = '';
+    els.fetchBtn.disabled = false;
+  }
+
+  if (els.addRssBtn) {
+    els.addRssBtn.addEventListener('click', handleAddRssUrl);
+    if (els.rssUrl) {
+      els.rssUrl.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') handleAddRssUrl();
+      });
+    }
+  }
+  // Recursively get all XML files from a directory handle
+  async function getAllXmlFilesFromDir(dirHandle, fileList = []) {
+    // Accept .xml and .opml files
+    for await (const [name, entry] of dirHandle.entries()) {
+      if (entry.kind === 'file' && name.match(/\.(xml|opml)$/i)) {
+        fileList.push(entry);
+      } else if (entry.kind === 'directory') {
+        await getAllXmlFilesFromDir(entry, fileList);
+      }
+    }
+    return fileList;
+  }
+
+  // Read all XML files and aggregate sources
+  async function ingestXmlFolder() {
+    if (!window.showDirectoryPicker) {
+      alert('Seu navegador não suporta seleção de pastas. Use o Chrome ou Edge mais recente.');
+      return;
+    }
+    try {
+      els.fetchBtn.disabled = true;
+      els.cancelBtn.disabled = true;
+      els.status.textContent = 'Selecionando pasta...';
+      const dirHandle = await window.showDirectoryPicker();
+      els.status.textContent = 'Procurando arquivos XML/OPML...';
+      const xmlFiles = await getAllXmlFilesFromDir(dirHandle);
+      if (!xmlFiles.length) throw new Error('Nenhum arquivo XML/OPML encontrado na pasta.');
+      els.status.textContent = `Lendo ${xmlFiles.length} arquivos...`;
+      let allSources = [];
+      for (const fileHandle of xmlFiles) {
+        try {
+          const file = await fileHandle.getFile();
+          const text = await file.text();
+          let sources = [];
+          if (file.name.match(/\.opml$/i)) {
+            sources = parseFeedListOpml(text);
+          } else {
+            sources = parseFeedListXml(text);
+          }
+          if (sources && sources.length) allSources.push(...sources);
+        } catch (e) {
+          // Ignore individual file errors, but could log if needed
+        }
+      }
+      if (!allSources.length) throw new Error('Nenhuma fonte encontrada nos arquivos XML/OPML.');
+      state.sources = allSources;
+      state.articles = [];
+      populateFilterOptions();
+      renderArticles();
+      els.status.innerHTML = '';
+      els.fetchBtn.disabled = false;
+    } catch (err) {
+      console.error(err);
+      els.status.innerHTML = `<span class=\"err\">Erro ao ler arquivos XML/OPML: ${escapeHtml(err.message || String(err))}</span>`;
+    }
+  }
+  if (els.folderBtn) {
+    els.folderBtn.addEventListener('click', ingestXmlFolder);
+  }
 
   // State
   const state = {
@@ -53,6 +153,20 @@ document.addEventListener('DOMContentLoaded', function() {
       const category = (categoryEl ? categoryEl.textContent : '').trim();
       const rssUrl = (rssUrlEl ? rssUrlEl.textContent : linkEl ? linkEl.textContent : '').trim();
       return rssUrl ? { title: title || rssUrl, category, url: rssUrl } : null;
+    }).filter(Boolean);
+  }
+
+  // Parse OPML files (common for RSS feed lists)
+  function parseFeedListOpml(opml) {
+    const doc = new DOMParser().parseFromString(opml, 'text/xml');
+    if (doc.querySelector('parsererror')) throw new Error('OPML inválido');
+    // OPML feeds are usually in <outline> elements with xmlUrl attribute
+    const outlines = Array.from(doc.querySelectorAll('outline[xmlUrl]'));
+    return outlines.map(outline => {
+      const title = outline.getAttribute('title') || outline.getAttribute('text') || outline.getAttribute('xmlUrl');
+      const url = outline.getAttribute('xmlUrl');
+      const category = outline.getAttribute('category') || '';
+      return url ? { title: title || url, category, url } : null;
     }).filter(Boolean);
   }
   function formatDate(dt) {
@@ -437,8 +551,14 @@ document.addEventListener('DOMContentLoaded', function() {
         els.cancelBtn.disabled = true;
         els.status.textContent = 'Lendo arquivo...';
         const text = await readFileAsText(file);
-        state.sources = parseFeedListXml(text);
-        if (!state.sources.length) throw new Error('Nenhuma fonte encontrada no XML');
+        let sources = [];
+        if (file.name.match(/\.opml$/i)) {
+          sources = parseFeedListOpml(text);
+        } else {
+          sources = parseFeedListXml(text);
+        }
+        state.sources = sources;
+        if (!state.sources.length) throw new Error('Nenhuma fonte encontrada no arquivo');
         state.articles = [];
         populateFilterOptions();
         renderArticles();
@@ -446,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function() {
         els.fetchBtn.disabled = false;
       } catch (err) {
         console.error(err);
-        els.status.innerHTML = `<span class="err">Erro ao ler XML: ${escapeHtml(err.message || String(err))}</span>`;
+        els.status.innerHTML = `<span class=\"err\">Erro ao ler arquivo: ${escapeHtml(err.message || String(err))}</span>`;
       }
     });
   }
