@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leitor de RSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Leitor de RSS</h1>
+    <div class="controls">
+      <div class="row" style="grid-column: span 6;">
+        <label for="xmlFile">Arquivo de fontes (.xml)</label>
+        <input id="xmlFile" type="file" accept=".xml, text/xml, application/xml" />
+      </div>
+      <div class="row" style="grid-column: span 3;">
+        <label for="concurrency">Concorrência</label>
+        <input id="concurrency" type="number" min="1" max="16" value="4" />
+      </div>
+      <div class="row" style="grid-column: span 3;">
+        <label for="timeout">Timeout (s)</label>
+        <input id="timeout" type="number" min="5" max="60" value="15" />
+      </div>
+      <div class="row" style="grid-column: span 12; display: flex; gap: 8px; align-items: end;">
+        <button id="fetchBtn" class="btn btn-primary" disabled>Buscar notícias</button>
+        <button id="cancelBtn" class="btn btn-danger" disabled>Cancelar</button>
+        <button id="resetProxiesBtn" class="btn" onclick="resetProxies()" style="font-size: 11px; padding: 8px 10px;">Reset Proxies</button>
+        <button id="proxyStatsBtn" class="btn" onclick="showProxyStats()" style="font-size: 11px; padding: 8px 10px;">Stats Proxy</button>
+        <div class="status" id="status"></div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <aside>
+      <div class="panel">
+        <h3>Filtros</h3>
+        <div class="small" id="sourcesSummary">Nenhuma fonte carregada</div>
+        <div style="margin-top:8px; display:grid; gap:8px;">
+          <div>
+            <label for="search">Busca</label>
+            <input id="search" type="text" placeholder="título, descrição..." />
+          </div>
+          <div>
+            <label for="categoryFilter">Categoria</label>
+            <select id="categoryFilter">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          <div>
+            <label for="sourceFilter">Fonte</label>
+            <select id="sourceFilter">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          <div>
+            <label for="sortOrder">Ordenar</label>
+            <select id="sortOrder">
+              <option value="desc">Mais recentes primeiro</option>
+              <option value="asc">Mais antigas primeiro</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="panel small">
+        Sistema robusto com 39 proxies CORS distribuídos globalmente (incluindo 12 servidores brasileiros otimizados), cascata inteligente multinível, classificação avançada de erros com IA, recuperação automática com quarentena dinâmica, cache persistente de configurações e balanceamento de carga para máxima confiabilidade e latência ultra-baixa.
+      </div>
+    </aside>
+    <section>
+      <div class="articles" id="articles"></div>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>

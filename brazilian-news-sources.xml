@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>Brazilian News RSS Feeds</title>
+<description>Collection of RSS feed URLs from major Brazilian news sources for aggregation</description>
+<link>https://example.com/brazilian-news-feeds</link>
+<language>pt-BR</language>
+<pubDate>Wed, 11 Sep 2025 12:00:00 GMT</pubDate>
+<lastBuildDate>Wed, 11 Sep 2025 12:00:00 GMT</lastBuildDate>
+<generator>Brazilian News Aggregator</generator>
+
+<item>
+<title>G1 - Últimas Notícias</title>
+<description>Feed principal do G1 com as últimas notícias do Brasil e mundo</description>
+<link>http://g1.globo.com/dynamo/rss2.xml</link>
+<category>Nacional</category>
+<guid>g1-geral</guid>
+<rss_url>http://g1.globo.com/dynamo/rss2.xml</rss_url>
+</item>
+
+<item>
+<title>G1 - Política</title>
+<description>Notícias de política nacional</description>
+<link>http://g1.globo.com/dynamo/politica/rss2.xml</link>
+<category>Política</category>
+<guid>g1-politica</guid>
+<rss_url>http://g1.globo.com/dynamo/politica/rss2.xml</rss_url>
+</item>
+
+<item>
+<title>G1 - Economia</title>
+<description>Notícias de economia e negócios</description>
+<link>http://g1.globo.com/dynamo/economia/rss2.xml</link>
+<category>Economia</category>
+<guid>g1-economia</guid>
+<rss_url>http://g1.globo.com/dynamo/economia/rss2.xml</rss_url>
+</item>
+
+<item>
+<title>UOL Notícias</title>
+<description>Feed geral do UOL Notícias</description>
+<link>http://rss.uol.com.br/feed/noticias.xml</link>
+<category>Nacional</category>
+<guid>uol-noticias</guid>
+<rss_url>http://rss.uol.com.br/feed/noticias.xml</rss_url>
+</item>
+
+<item>
+<title>Folha de S.Paulo</title>
+<description>Últimas notícias da Folha</description>
+<link>https://feeds.folha.uol.com.br/folha/cotidiano/rss091.xml</link>
+<category>Nacional</category>
+<guid>folha-cotidiano</guid>
+<rss_url>https://feeds.folha.uol.com.br/folha/cotidiano/rss091.xml</rss_url>
+</item>
+
+<item>
+<title>O Globo</title>
+<description>Notícias do O Globo</description>
+<link>https://oglobo.globo.com/rss.xml</link>
+<category>Nacional</category>
+<guid>oglobo-geral</guid>
+<rss_url>https://oglobo.globo.com/rss.xml</rss_url>
+</item>
+
+<item>
+<title>Estadão</title>
+<description>Últimas notícias do Estado de S. Paulo</description>
+<link>https://www.estadao.com.br/rss/geral.xml</link>
+<category>Nacional</category>
+<guid>estadao-geral</guid>
+<rss_url>https://www.estadao.com.br/rss/geral.xml</rss_url>
+</item>
+
+<item>
+<title>Valor Econômico</title>
+<description>Notícias de economia e mercado financeiro</description>
+<link>https://valor.globo.com/rss/geral.xml</link>
+<category>Economia</category>
+<guid>valor-economico</guid>
+<rss_url>https://valor.globo.com/rss/geral.xml</rss_url>
+</item>
+
+<item>
+<title>R7 Notícias</title>
+<description>Feed geral do R7</description>
+<link>https://noticias.r7.com/feed.xml</link>
+<category>Nacional</category>
+<guid>r7-noticias</guid>
+<rss_url>https://noticias.r7.com/feed.xml</rss_url>
+</item>
+
+<item>
+<title>BBC News Brasil</title>
+<description>Notícias da BBC em português</description>
+<link>https://feeds.bbci.co.uk/portuguese/rss.xml</link>
+<category>Internacional</category>
+<guid>bbc-brasil</guid>
+<rss_url>https://feeds.bbci.co.uk/portuguese/rss.xml</rss_url>
+</item>
+
+<item>
+<title>CartaCapital</title>
+<description>Últimas notícias da CartaCapital</description>
+<link>https://www.cartacapital.com.br/feed/</link>
+<category>Política</category>
+<guid>carta-capital</guid>
+<rss_url>https://www.cartacapital.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Exame</title>
+<description>Notícias de negócios e economia</description>
+<link>https://exame.com/feed/</link>
+<category>Economia</category>
+<guid>exame</guid>
+<rss_url>https://exame.com/feed/</rss_url>
+</item>
+
+<item>
+<title>Correio Braziliense</title>
+<description>Notícias políticas de Brasília</description>
+<link>https://www.correiobraziliense.com.br/rss/</link>
+<category>Política</category>
+<guid>correio-braziliense</guid>
+<rss_url>https://www.correiobraziliense.com.br/rss/</rss_url>
+</item>
+
+<item>
+<title>Gazeta do Povo</title>
+<description>Notícias do Paraná e Brasil</description>
+<link>https://www.gazetadopovo.com.br/feed/</link>
+<category>Regional</category>
+<guid>gazeta-povo</guid>
+<rss_url>https://www.gazetadopovo.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Zero Hora</title>
+<description>Notícias do Rio Grande do Sul</description>
+<link>https://gauchazh.clicrbs.com.br/rss/</link>
+<category>Regional</category>
+<guid>zero-hora</guid>
+<rss_url>https://gauchazh.clicrbs.com.br/rss/</rss_url>
+</item>
+
+<item>
+<title>Brasil de Fato</title>
+<description>Notícias dos movimentos sociais</description>
+<link>https://www.brasildefato.com.br/index.xml</link>
+<category>Social</category>
+<guid>brasil-de-fato</guid>
+<rss_url>https://www.brasildefato.com.br/index.xml</rss_url>
+</item>
+
+<item>
+<title>Nexo Jornal</title>
+<description>Jornalismo explicativo</description>
+<link>https://www.nexojornal.com.br/rss/Geral</link>
+<category>Análise</category>
+<guid>nexo-jornal</guid>
+<rss_url>https://www.nexojornal.com.br/rss/Geral</rss_url>
+</item>
+
+<item>
+<title>Agência Brasil</title>
+<description>Notícias oficiais do governo</description>
+<link>https://agenciabrasil.ebc.com.br/rss</link>
+<category>Governo</category>
+<guid>agencia-brasil</guid>
+<rss_url>https://agenciabrasil.ebc.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Metrópoles</title>
+<description>Política e celebridades</description>
+<link>https://www.metropoles.com/feed</link>
+<category>Nacional</category>
+<guid>metropoles</guid>
+<rss_url>https://www.metropoles.com/feed</rss_url>
+</item>
+
+<item>
+<title>IstoÉ</title>
+<description>Revista de informação semanal</description>
+<link>https://istoe.com.br/feed/</link>
+<category>Nacional</category>
+<guid>istoe</guid>
+<rss_url>https://istoe.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Veja</title>
+<description>Revista semanal de informação</description>
+<link>https://veja.abril.com.br/feed/</link>
+<category>Nacional</category>
+<guid>veja</guid>
+<rss_url>https://veja.abril.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Época</title>
+<description>Revista de informação da Globo</description>
+<link>https://epoca.oglobo.globo.com/rss.xml</link>
+<category>Nacional</category>
+<guid>epoca</guid>
+<rss_url>https://epoca.oglobo.globo.com/rss.xml</rss_url>
+</item>
+
+<item>
+<title>O Estado de Minas</title>
+<description>Principal jornal de Minas Gerais</description>
+<link>https://www.em.com.br/rss/noticias</link>
+<category>Regional</category>
+<guid>estado-minas</guid>
+<rss_url>https://www.em.com.br/rss/noticias</rss_url>
+</item>
+
+<item>
+<title>A Tarde</title>
+<description>Notícias da Bahia</description>
+<link>https://atarde.uol.com.br/rss</link>
+<category>Regional</category>
+<guid>a-tarde</guid>
+<rss_url>https://atarde.uol.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Diário do Nordeste</title>
+<description>Notícias do Ceará</description>
+<link>https://diariodonordeste.verdesmares.com.br/rss</link>
+<category>Regional</category>
+<guid>diario-nordeste</guid>
+<rss_url>https://diariodonordeste.verdesmares.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Jornal do Commercio</title>
+<description>Notícias de Pernambuco</description>
+<link>https://jc.ne10.uol.com.br/rss</link>
+<category>Regional</category>
+<guid>jornal-commercio</guid>
+<rss_url>https://jc.ne10.uol.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>A Gazeta</title>
+<description>Notícias do Espírito Santo</description>
+<link>https://www.agazeta.com.br/rss</link>
+<category>Regional</category>
+<guid>a-gazeta</guid>
+<rss_url>https://www.agazeta.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>O Popular</title>
+<description>Notícias de Goiás</description>
+<link>https://www.opopular.com.br/rss</link>
+<category>Regional</category>
+<guid>o-popular</guid>
+<rss_url>https://www.opopular.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Campo Grande News</title>
+<description>Notícias de Mato Grosso do Sul</description>
+<link>https://www.campograndenews.com.br/rss</link>
+<category>Regional</category>
+<guid>campo-grande-news</guid>
+<rss_url>https://www.campograndenews.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>A Crítica</title>
+<description>Notícias do Amazonas</description>
+<link>https://www.acritica.com/feed</link>
+<category>Regional</category>
+<guid>a-critica</guid>
+<rss_url>https://www.acritica.com/feed</rss_url>
+</item>
+
+<item>
+<title>Folha de Boa Vista</title>
+<description>Notícias de Roraima</description>
+<link>https://folhabv.com.br/feed/</link>
+<category>Regional</category>
+<guid>folha-boa-vista</guid>
+<rss_url>https://folhabv.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>O Liberal</title>
+<description>Notícias do Pará</description>
+<link>https://www.oliberal.com/rss</link>
+<category>Regional</category>
+<guid>o-liberal</guid>
+<rss_url>https://www.oliberal.com/rss</rss_url>
+</item>
+
+<item>
+<title>Jornal da Paraíba</title>
+<description>Notícias da Paraíba</description>
+<link>https://www.jornaldaparaiba.com.br/feed</link>
+<category>Regional</category>
+<guid>jornal-paraiba</guid>
+<rss_url>https://www.jornaldaparaiba.com.br/feed</rss_url>
+</item>
+
+<item>
+<title>Meio Norte</title>
+<description>Notícias do Piauí</description>
+<link>https://www.meionorte.com/feed</link>
+<category>Regional</category>
+<guid>meio-norte</guid>
+<rss_url>https://www.meionorte.com/feed</rss_url>
+</item>
+
+<item>
+<title>Jornal de Brasília</title>
+<description>Notícias de Brasília</description>
+<link>https://jornaldebrasilia.com.br/feed/</link>
+<category>Política</category>
+<guid>jornal-brasilia</guid>
+<rss_url>https://jornaldebrasilia.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>CNN Brasil</title>
+<description>Notícias 24 horas</description>
+<link>https://www.cnnbrasil.com.br/feed/</link>
+<category>Nacional</category>
+<guid>cnn-brasil</guid>
+<rss_url>https://www.cnnbrasil.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Band News</title>
+<description>Notícias da Band</description>
+<link>https://bandnewstv.band.uol.com.br/rss</link>
+<category>Nacional</category>
+<guid>band-news</guid>
+<rss_url>https://bandnewstv.band.uol.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Record News</title>
+<description>Canal de notícias da Record</description>
+<link>https://recordtv.r7.com/record-news/rss</link>
+<category>Nacional</category>
+<guid>record-news</guid>
+<rss_url>https://recordtv.r7.com/record-news/rss</rss_url>
+</item>
+
+<item>
+<title>SBT News</title>
+<description>Notícias do SBT</description>
+<link>https://www.sbt.com.br/jornalismo/rss</link>
+<category>Nacional</category>
+<guid>sbt-news</guid>
+<rss_url>https://www.sbt.com.br/jornalismo/rss</rss_url>
+</item>
+
+<item>
+<title>TV Cultura</title>
+<description>Jornalismo da TV Cultura</description>
+<link>https://cultura.uol.com.br/rss</link>
+<category>Cultural</category>
+<guid>tv-cultura</guid>
+<rss_url>https://cultura.uol.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Poder360</title>
+<description>Política e poder em Brasília</description>
+<link>https://www.poder360.com.br/feed/</link>
+<category>Política</category>
+<guid>poder360</guid>
+<rss_url>https://www.poder360.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Congresso em Foco</title>
+<description>Cobertura do Congresso Nacional</description>
+<link>https://congressoemfoco.uol.com.br/feed/</link>
+<category>Política</category>
+<guid>congresso-foco</guid>
+<rss_url>https://congressoemfoco.uol.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Consultor Jurídico</title>
+<description>Notícias jurídicas</description>
+<link>https://www.conjur.com.br/rss</link>
+<category>Jurídico</category>
+<guid>conjur</guid>
+<rss_url>https://www.conjur.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>JOTA</title>
+<description>Jornalismo jurídico e político</description>
+<link>https://www.jota.info/feed</link>
+<category>Jurídico</category>
+<guid>jota</guid>
+<rss_url>https://www.jota.info/feed</rss_url>
+</item>
+
+<item>
+<title>InfoMoney</title>
+<description>Notícias de economia e finanças</description>
+<link>https://www.infomoney.com.br/feed/</link>
+<category>Economia</category>
+<guid>infomoney</guid>
+<rss_url>https://www.infomoney.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Money Times</title>
+<description>Mercado financeiro e investimentos</description>
+<link>https://www.moneytimes.com.br/feed/</link>
+<category>Economia</category>
+<guid>money-times</guid>
+<rss_url>https://www.moneytimes.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Investing.com Brasil</title>
+<description>Análises financeiras e mercado</description>
+<link>https://br.investing.com/rss/news.rss</link>
+<category>Economia</category>
+<guid>investing-brasil</guid>
+<rss_url>https://br.investing.com/rss/news.rss</rss_url>
+</item>
+
+<item>
+<title>Seu Dinheiro</title>
+<description>Educação financeira</description>
+<link>https://www.seudinheiro.com/feed/</link>
+<category>Economia</category>
+<guid>seu-dinheiro</guid>
+<rss_url>https://www.seudinheiro.com/feed/</rss_url>
+</item>
+
+<item>
+<title>Pequenas Empresas Grandes Negócios</title>
+<description>Empreendedorismo e negócios</description>
+<link>https://revistapegn.globo.com/rss.xml</link>
+<category>Negócios</category>
+<guid>pegn</guid>
+<rss_url>https://revistapegn.globo.com/rss.xml</rss_url>
+</item>
+
+<item>
+<title>Época Negócios</title>
+<description>Revista de negócios</description>
+<link>https://epocanegocios.globo.com/rss.xml</link>
+<category>Negócios</category>
+<guid>epoca-negocios</guid>
+<rss_url>https://epocanegocios.globo.com/rss.xml</rss_url>
+</item>
+
+<item>
+<title>StartSe</title>
+<description>Startups e inovação</description>
+<link>https://www.startse.com/feed/</link>
+<category>Tecnologia</category>
+<guid>startse</guid>
+<rss_url>https://www.startse.com/feed/</rss_url>
+</item>
+
+<item>
+<title>TechTudo</title>
+<description>Tecnologia e gadgets</description>
+<link>https://www.techtudo.com.br/rss</link>
+<category>Tecnologia</category>
+<guid>techtudo</guid>
+<rss_url>https://www.techtudo.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Olhar Digital</title>
+<description>Tecnologia e inovação</description>
+<link>https://olhardigital.com.br/feed/</link>
+<category>Tecnologia</category>
+<guid>olhar-digital</guid>
+<rss_url>https://olhardigital.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Canaltech</title>
+<description>Tecnologia e ciência</description>
+<link>https://canaltech.com.br/rss/</link>
+<category>Tecnologia</category>
+<guid>canaltech</guid>
+<rss_url>https://canaltech.com.br/rss/</rss_url>
+</item>
+
+<item>
+<title>Gizmodo Brasil</title>
+<description>Tecnologia e gadgets</description>
+<link>https://gizmodo.uol.com.br/feed/</link>
+<category>Tecnologia</category>
+<guid>gizmodo-brasil</guid>
+<rss_url>https://gizmodo.uol.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Tecnoblog</title>
+<description>Tecnologia e internet</description>
+<link>https://tecnoblog.net/feed/</link>
+<category>Tecnologia</category>
+<guid>tecnoblog</guid>
+<rss_url>https://tecnoblog.net/feed/</rss_url>
+</item>
+
+<item>
+<title>Globo Esporte</title>
+<description>Notícias esportivas</description>
+<link>http://globoesporte.globo.com/dynamo/rss2.xml</link>
+<category>Esportes</category>
+<guid>globo-esporte</guid>
+<rss_url>http://globoesporte.globo.com/dynamo/rss2.xml</rss_url>
+</item>
+
+<item>
+<title>UOL Esporte</title>
+<description>Cobertura esportiva completa</description>
+<link>https://esporte.uol.com.br/rss/geral.xml</link>
+<category>Esportes</category>
+<guid>uol-esporte</guid>
+<rss_url>https://esporte.uol.com.br/rss/geral.xml</rss_url>
+</item>
+
+<item>
+<title>Lance!</title>
+<description>Futebol e esportes</description>
+<link>https://www.lance.com.br/rss.xml</link>
+<category>Esportes</category>
+<guid>lance</guid>
+<rss_url>https://www.lance.com.br/rss.xml</rss_url>
+</item>
+
+<item>
+<title>ESPN Brasil</title>
+<description>Esportes internacionais</description>
+<link>https://www.espn.com.br/rss/</link>
+<category>Esportes</category>
+<guid>espn-brasil</guid>
+<rss_url>https://www.espn.com.br/rss/</rss_url>
+</item>
+
+<item>
+<title>Placar</title>
+<description>Revista esportiva</description>
+<link>https://placar.abril.com.br/feed/</link>
+<category>Esportes</category>
+<guid>placar</guid>
+<rss_url>https://placar.abril.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Blog do PVC</title>
+<description>Análises de futebol</description>
+<link>https://blogdopvc.blogosfera.uol.com.br/feed/</link>
+<category>Esportes</category>
+<guid>blog-pvc</guid>
+<rss_url>https://blogdopvc.blogosfera.uol.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>O Tempo</title>
+<description>Jornal de Belo Horizonte</description>
+<link>https://www.otempo.com.br/rss</link>
+<category>Regional</category>
+<guid>o-tempo</guid>
+<rss_url>https://www.otempo.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Hoje em Dia</title>
+<description>Notícias de Minas Gerais</description>
+<link>https://www.hojeemdia.com.br/rss</link>
+<category>Regional</category>
+<guid>hoje-em-dia</guid>
+<rss_url>https://www.hojeemdia.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Portal A8</title>
+<description>Notícias de São Paulo</description>
+<link>https://portala8.com/feed/</link>
+<category>Regional</category>
+<guid>portal-a8</guid>
+<rss_url>https://portala8.com/feed/</rss_url>
+</item>
+
+<item>
+<title>Tribuna de Santos</title>
+<description>Notícias da Baixada Santista</description>
+<link>https://www.atribuna.com.br/rss</link>
+<category>Regional</category>
+<guid>tribuna-santos</guid>
+<rss_url>https://www.atribuna.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Jornal de Piracicaba</title>
+<description>Notícias do interior paulista</description>
+<link>https://www.jornaldepiracicaba.com.br/feed/</link>
+<category>Regional</category>
+<guid>jornal-piracicaba</guid>
+<rss_url>https://www.jornaldepiracicaba.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Portal G1 Rio</title>
+<description>Notícias do Rio de Janeiro</description>
+<link>http://g1.globo.com/rj/rio-de-janeiro/rss2.xml</link>
+<category>Regional</category>
+<guid>g1-rio</guid>
+<rss_url>http://g1.globo.com/rj/rio-de-janeiro/rss2.xml</rss_url>
+</item>
+
+<item>
+<title>Extra</title>
+<description>Notícias populares do Rio</description>
+<link>https://extra.globo.com/rss.xml</link>
+<category>Nacional</category>
+<guid>extra</guid>
+<rss_url>https://extra.globo.com/rss.xml</rss_url>
+</item>
+
+<item>
+<title>O Dia</title>
+<description>Jornal popular do Rio de Janeiro</description>
+<link>https://odia.ig.com.br/rss</link>
+<category>Regional</category>
+<guid>o-dia</guid>
+<rss_url>https://odia.ig.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Jornal do Brasil</title>
+<description>Tradicional jornal carioca</description>
+<link>https://www.jb.com.br/feed/</link>
+<category>Nacional</category>
+<guid>jornal-brasil</guid>
+<rss_url>https://www.jb.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Saúde Business</title>
+<description>Notícias de saúde e medicina</description>
+<link>https://saudebusiness.com/feed/</link>
+<category>Saúde</category>
+<guid>saude-business</guid>
+<rss_url>https://saudebusiness.com/feed/</rss_url>
+</item>
+
+<item>
+<title>Drauzio Varella</title>
+<description>Informações médicas e saúde</description>
+<link>https://drauziovarella.uol.com.br/feed/</link>
+<category>Saúde</category>
+<guid>drauzio-varella</guid>
+<rss_url>https://drauziovarella.uol.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Minha Vida</title>
+<description>Saúde e bem-estar</description>
+<link>https://www.minhavida.com.br/rss</link>
+<category>Saúde</category>
+<guid>minha-vida</guid>
+<rss_url>https://www.minhavida.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Tua Saúde</title>
+<description>Portal de saúde e medicina</description>
+<link>https://www.tuasaude.com/feed/</link>
+<category>Saúde</category>
+<guid>tua-saude</guid>
+<rss_url>https://www.tuasaude.com/feed/</rss_url>
+</item>
+
+<item>
+<title>Ciclo Vivo</title>
+<description>Meio ambiente e sustentabilidade</description>
+<link>https://ciclovivo.com.br/feed/</link>
+<category>Meio Ambiente</category>
+<guid>ciclo-vivo</guid>
+<rss_url>https://ciclovivo.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Planeta Sustentável</title>
+<description>Sustentabilidade e ecologia</description>
+<link>https://planetasustentavel.abril.com.br/feed/</link>
+<category>Meio Ambiente</category>
+<guid>planeta-sustentavel</guid>
+<rss_url>https://planetasustentavel.abril.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Instituto Socioambiental</title>
+<description>Questões socioambientais</description>
+<link>https://www.socioambiental.org/rss</link>
+<category>Meio Ambiente</category>
+<guid>isa</guid>
+<rss_url>https://www.socioambiental.org/rss</rss_url>
+</item>
+
+<item>
+<title>Hypeness</title>
+<description>Cultura, arte e comportamento</description>
+<link>https://www.hypeness.com.br/feed/</link>
+<category>Cultural</category>
+<guid>hypeness</guid>
+<rss_url>https://www.hypeness.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Catraca Livre</title>
+<description>Cultura e entretenimento gratuito</description>
+<link>https://catracalivre.com.br/feed/</link>
+<category>Cultural</category>
+<guid>catraca-livre</guid>
+<rss_url>https://catracalivre.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Adnews</title>
+<description>Publicidade e marketing</description>
+<link>https://adnews.com.br/feed/</link>
+<category>Marketing</category>
+<guid>adnews</guid>
+<rss_url>https://adnews.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Meio &amp; Mensagem</title>
+<description>Comunicação e marketing</description>
+<link>https://www.meioemensagem.com.br/feed/</link>
+<category>Marketing</category>
+<guid>meio-mensagem</guid>
+<rss_url>https://www.meioemensagem.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Educação Integral</title>
+<description>Educação e pedagogia</description>
+<link>https://educacaointegral.org.br/feed/</link>
+<category>Educação</category>
+<guid>educacao-integral</guid>
+<rss_url>https://educacaointegral.org.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Nova Escola</title>
+<description>Revista de educação</description>
+<link>https://novaescola.org.br/feed/</link>
+<category>Educação</category>
+<guid>nova-escola</guid>
+<rss_url>https://novaescola.org.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Porvir</title>
+<description>Inovação em educação</description>
+<link>https://porvir.org/feed/</link>
+<category>Educação</category>
+<guid>porvir</guid>
+<rss_url>https://porvir.org/feed/</rss_url>
+</item>
+
+<item>
+<title>E-Commerce Brasil</title>
+<description>Comércio eletrônico</description>
+<link>https://www.ecommercebrasil.com.br/feed/</link>
+<category>E-commerce</category>
+<guid>ecommerce-brasil</guid>
+<rss_url>https://www.ecommercebrasil.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Conversion</title>
+<description>Marketing digital e conversão</description>
+<link>https://conversion.com.br/feed/</link>
+<category>Marketing</category>
+<guid>conversion</guid>
+<rss_url>https://conversion.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Agro Estadão</title>
+<description>Agronegócio e agricultura</description>
+<link>https://agro.estadao.com.br/rss</link>
+<category>Agronegócio</category>
+<guid>agro-estadao</guid>
+<rss_url>https://agro.estadao.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Canal Rural</title>
+<description>Notícias do agronegócio</description>
+<link>https://canalrural.uol.com.br/rss</link>
+<category>Agronegócio</category>
+<guid>canal-rural</guid>
+<rss_url>https://canalrural.uol.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Globo Rural</title>
+<description>Agricultura e pecuária</description>
+<link>https://globorural.globo.com/rss.xml</link>
+<category>Agronegócio</category>
+<guid>globo-rural</guid>
+<rss_url>https://globorural.globo.com/rss.xml</rss_url>
+</item>
+
+<item>
+<title>Agrolink</title>
+<description>Tecnologia agrícola</description>
+<link>https://www.agrolink.com.br/rss</link>
+<category>Agronegócio</category>
+<guid>agrolink</guid>
+<rss_url>https://www.agrolink.com.br/rss</rss_url>
+</item>
+
+<item>
+<title>Gazeta Rural</title>
+<description>Agricultura familiar</description>
+<link>https://gazetarural.com.br/feed/</link>
+<category>Agronegócio</category>
+<guid>gazeta-rural</guid>
+<rss_url>https://gazetarural.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Pensar a Prática</title>
+<description>Educação física e esportes</description>
+<link>https://www.revistas.ufg.br/fef/rss</link>
+<category>Esportes</category>
+<guid>pensar-pratica</guid>
+<rss_url>https://www.revistas.ufg.br/fef/rss</rss_url>
+</item>
+
+<item>
+<title>Blog do Jamildo</title>
+<description>Política nordestina</description>
+<link>https://blogs.ne10.uol.com.br/jamildo/feed/</link>
+<category>Política</category>
+<guid>blog-jamildo</guid>
+<rss_url>https://blogs.ne10.uol.com.br/jamildo/feed/</rss_url>
+</item>
+
+<item>
+<title>Sul21</title>
+<description>Jornalismo independente do Sul</description>
+<link>https://sul21.com.br/feed/</link>
+<category>Regional</category>
+<guid>sul21</guid>
+<rss_url>https://sul21.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>The Intercept Brasil</title>
+<description>Jornalismo investigativo</description>
+<link>https://theintercept.com/brasil/feed/</link>
+<category>Investigativo</category>
+<guid>intercept-brasil</guid>
+<rss_url>https://theintercept.com/brasil/feed/</rss_url>
+</item>
+
+<item>
+<title>Agência Pública</title>
+<description>Jornalismo investigativo independente</description>
+<link>https://apublica.org/feed/</link>
+<category>Investigativo</category>
+<guid>agencia-publica</guid>
+<rss_url>https://apublica.org/feed/</rss_url>
+</item>
+
+<item>
+<title>Piauí</title>
+<description>Revista de reportagem</description>
+<link>https://piaui.folha.uol.com.br/feed/</link>
+<category>Investigativo</category>
+<guid>piaui</guid>
+<rss_url>https://piaui.folha.uol.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Repórter Brasil</title>
+<description>Jornalismo social e ambiental</description>
+<link>https://reporterbrasil.org.br/feed/</link>
+<category>Social</category>
+<guid>reporter-brasil</guid>
+<rss_url>https://reporterbrasil.org.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Outras Palavras</title>
+<description>Jornalismo crítico e alternativo</description>
+<link>https://outraspalavras.net/feed/</link>
+<category>Alternativo</category>
+<guid>outras-palavras</guid>
+<rss_url>https://outraspalavras.net/feed/</rss_url>
+</item>
+
+<item>
+<title>Marco Zero</title>
+<description>Jornalismo de Pernambuco</description>
+<link>https://marcozero.org/feed/</link>
+<category>Regional</category>
+<guid>marco-zero</guid>
+<rss_url>https://marcozero.org/feed/</rss_url>
+</item>
+
+<item>
+<title>Alma Preta</title>
+<description>Jornalismo negro e diversidade</description>
+<link>https://almapreta.com/feed</link>
+<category>Diversidade</category>
+<guid>alma-preta</guid>
+<rss_url>https://almapreta.com/feed</rss_url>
+</item>
+
+<item>
+<title>AzMina</title>
+<description>Jornalismo feminista</description>
+<link>https://azmina.com.br/feed/</link>
+<category>Diversidade</category>
+<guid>azmina</guid>
+<rss_url>https://azmina.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Gênero e Número</title>
+<description>Dados e estatísticas sobre gênero</description>
+<link>https://www.generonumero.media/feed/</link>
+<category>Diversidade</category>
+<guid>genero-numero</guid>
+<rss_url>https://www.generonumero.media/feed/</rss_url>
+</item>
+
+<item>
+<title>Amazônia Real</title>
+<description>Jornalismo da Amazônia</description>
+<link>https://amazoniareal.com.br/feed/</link>
+<category>Regional</category>
+<guid>amazonia-real</guid>
+<rss_url>https://amazoniareal.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>Catarinas</title>
+<description>Jornalismo com perspectiva de gênero</description>
+<link>https://catarinas.info/feed/</link>
+<category>Diversidade</category>
+<guid>catarinas</guid>
+<rss_url>https://catarinas.info/feed/</rss_url>
+</item>
+
+<item>
+<title>Pragmatismo Político</title>
+<description>Análise política progressista</description>
+<link>https://www.pragmatismopolitico.com.br/feed</link>
+<category>Política</category>
+<guid>pragmatismo-politico</guid>
+<rss_url>https://www.pragmatismopolitico.com.br/feed</rss_url>
+</item>
+
+<item>
+<title>DCM</title>
+<description>Diário do Centro do Mundo</description>
+<link>https://www.diariocentrodomundo.com.br/feed/</link>
+<category>Política</category>
+<guid>dcm</guid>
+<rss_url>https://www.diariocentrodomundo.com.br/feed/</rss_url>
+</item>
+
+<item>
+<title>247</title>
+<description>Portal de notícias independente</description>
+<link>https://www.brasil247.com/rss</link>
+<category>Política</category>
+<guid>brasil247</guid>
+<rss_url>https://www.brasil247.com/rss</rss_url>
+</item>
+
+</channel>
+</rss>
