@@ -677,6 +677,7 @@ function parseRssItem(content, source) {
     source: source.title,
     sourceCategory: source.category || '',
     sourceUrl: source.url,
+    image: undefined, // New property for image URL
   };
   
   // Extract title with multiple strategies
@@ -713,16 +714,55 @@ function parseRssItem(content, source) {
     item.ts = item.date ? item.date.getTime() : 0;
   }
   
+  // --- Extract image URL from common RSS fields ---
+  // 1. enclosure (type image/*)
+  let imgMatch = content.match(/<enclosure[^>]+type=["']image\/(jpeg|jpg|png|gif|webp|bmp|svg)[^"']*["'][^>]*url=["']([^"']+)["'][^>]*>/i);
+  if (!imgMatch) {
+    imgMatch = content.match(/<enclosure[^>]+url=["']([^"']+)["'][^>]*type=["']image\/(jpeg|jpg|png|gif|webp|bmp|svg)[^"']*["'][^>]*>/i);
+    if (imgMatch) item.image = imgMatch[1];
+  } else {
+    item.image = imgMatch[2];
+  }
+  // 2. media:content
+  if (!item.image) {
+    imgMatch = content.match(/<media:content[^>]+url=["']([^"']+)["'][^>]*type=["']image\/(jpeg|jpg|png|gif|webp|bmp|svg)[^"']*["'][^>]*>/i);
+    if (imgMatch) item.image = imgMatch[1];
+  }
+  // 3. media:thumbnail
+  if (!item.image) {
+    imgMatch = content.match(/<media:thumbnail[^>]+url=["']([^"']+)["'][^>]*>/i);
+    if (imgMatch) item.image = imgMatch[1];
+  }
+  // 4. itunes:image
+  if (!item.image) {
+    imgMatch = content.match(/<itunes:image[^>]+href=["']([^"']+)["'][^>]*>/i);
+    if (imgMatch) item.image = imgMatch[1];
+  }
+  // 5. <image><url>...</url></image>
+  if (!item.image) {
+    imgMatch = content.match(/<image>\s*<url>([^<]+)<\/url>\s*<\/image>/i);
+    if (imgMatch) item.image = imgMatch[1];
+  }
+  // 6. Fallback: first <img src="..."> in description/content
+  if (!item.image) {
+    imgMatch = item.description.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i);
+    if (imgMatch) item.image = imgMatch[1];
+  }
+  // Only keep if it looks like an image URL
+  if (item.image && !/^https?:\/\/.+\.(jpg|jpeg|png|gif|webp|bmp|svg)(\?.*)?$/i.test(item.image)) {
+    // Accept data URLs or other valid image URLs, but skip if not image
+    if (!/^data:image\//.test(item.image)) {
+      item.image = undefined;
+    }
+  }
   // Clean up fields
   item.title = stripHtml(item.title).trim() || item.link.trim();
   item.link = item.link.trim();
   item.description = stripHtml(item.description).slice(0, 500).trim();
-  
   // Validate required fields
   if (!item.link || !item.title) {
     throw new Error('Item missing required fields (title or link)');
   }
-  
   return item;
 }
 

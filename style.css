@@ -42,6 +42,55 @@ aside { position: sticky; top: 84px; align-self: start; display: grid; gap: 12px
 .article a { color: #93c5fd; text-decoration: none; }
 .article a:hover { text-decoration: underline; }
 .meta { font-size: 12px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+.article img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 14px;
+  margin-bottom: 0;
+  float: left;
+  background: #222;
+  box-shadow: 0 2px 8px #0002;
+  cursor: pointer;
+}
+.article:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Modal for large image preview */
+#imgModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+}
+#imgModal.active {
+  display: flex;
+}
+#imgModal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px #000a;
+  background: #222;
+}
+#imgModal .close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 0 2px 8px #000a;
+  z-index: 1001;
+}
 
 .hidden { display: none !important; }
 

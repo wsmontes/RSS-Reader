@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const el = document.createElement('article');
       el.className = 'article';
       el.innerHTML = `
+        ${a.image ? `<img src="${escapeHtml(a.image)}" alt="Imagem da notícia" loading="lazy" style="" onerror="this.style.display='none'">` : ''}
         <h4><a href="${escapeHtml(a.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.title)}</a></h4>
         <div class="meta">
           <span>Fonte: ${escapeHtml(a.source)}</span>
@@ -111,6 +112,14 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         ${a.description ? `<div class="small">${escapeHtml(a.description)}</div>` : ''}
       `;
+      // Add click handler for image modal
+      const img = el.querySelector('img');
+      if (img) {
+        img.onclick = function(e) {
+          e.preventDefault();
+          openImgModal(img.src);
+        };
+      }
       frag.appendChild(el);
     }
     els.articles.replaceChildren(frag);
@@ -393,6 +402,24 @@ document.addEventListener('DOMContentLoaded', function() {
   // Make proxy functions globally available for HTML onclick
   window.resetProxies = resetProxies;
   window.showProxyStats = showProxyStats;
+
+  // Modal image preview logic
+  const imgModal = document.getElementById('imgModal');
+  const imgModalImg = document.getElementById('imgModalImg');
+  const imgModalClose = document.getElementById('imgModalClose');
+
+  function openImgModal(src) {
+    imgModalImg.src = src;
+    imgModal.classList.add('active');
+  }
+  function closeImgModal() {
+    imgModal.classList.remove('active');
+    imgModalImg.src = '';
+  }
+  if (imgModalClose) imgModalClose.onclick = closeImgModal;
+  if (imgModal) imgModal.onclick = function(e) {
+    if (e.target === imgModal) closeImgModal();
+  };
 
   // Event listeners
   if (els.resetProxiesBtn) {
